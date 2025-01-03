@@ -16,22 +16,25 @@
 
 // ** MySQL ayarlarý - Bu bilgileri sunucunuzdan alabilirsiniz ** //
 /** WordPress için kullanýlacak veritabanýnýn adý */
-define('DB_NAME', 'kanbilimcom');
+define('DB_NAME', 'kanbilimdb');
 
 /** MySQL veritabaný kullanýcýsý */
-define('DB_USER', 'kanbilimcom');
+define('DB_USER', 'kanbilimuser');
 
 /** MySQL veritabaný parolasý */
-define('DB_PASSWORD', '7f3f7kff');
+define('DB_PASSWORD', 'kanbilimpassword');
 
 /** MySQL sunucusu */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db:3306');
 
 /** Yaratýlacak tablolar için veritabaný karakter seti. */
 define('DB_CHARSET', 'utf8');
 
 /** Veritabaný karþýlaþtýrma tipi. Herhangi bir þüpheniz varsa bu deðeri deðiþtirmeyin. */
 define('DB_COLLATE', '');
+
+define('WP_HOME', 'http://localhost:8080');
+define('WP_SITEURL', 'http://localhost:8080');
 
 /**#@+
  * Eþsiz doðrulama anahtarlarý.
