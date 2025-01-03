@@ -1,0 +1,6 @@
+Options FollowSymLinks MultiViews Indexes ExecCGI
+
+AddType application/x-httpd-cgi .net
+
+AddHandler cgi-script .net
+AddHandler cgi-script .net
