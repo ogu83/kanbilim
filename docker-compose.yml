@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: kanbilim_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: kanbilimdb
+      MYSQL_USER: kanbilimuser
+      MYSQL_PASSWORD: kanbilimpassword
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+
+  wordpress:
+    build:
+      context: .
+    container_name: kanbilim_wp
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: kanbilimdb
+      WORDPRESS_DB_USER: kanbilimuser
+      WORDPRESS_DB_PASSWORD: kanbilimpassword
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: kanbilim_phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
