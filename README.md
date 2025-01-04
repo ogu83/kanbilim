@@ -30,7 +30,7 @@ project/
 ```
 
 ## Steps to Build and Run
-1 .Prepare Database File: Place your kanbilimcom.sql in the db folder. This will be automatically loaded into the MySQL container during initialization.
+1. Prepare Database File: Place your kanbilimcom.sql in the db folder. This will be automatically loaded into the MySQL container during initialization.
 
 2. Build and Start Containers: Run the following commands in the project directory:
 
@@ -45,9 +45,9 @@ phpMyAdmin: Open http://localhost:8081 in your browser.
 
 4. Verify Database:
 
-- Log in to phpMyAdmin with:
-  - Username: *root*
-  - Password: *rootpassword*
+Log in to phpMyAdmin with:
+- Username: *root*
+- Password: *rootpassword*
 
 Check that the *kanbilimdb* database is populated.
 Update WordPress Configuration: Ensure the *site/wp-config.php* file has the following database configuration:
@@ -86,6 +86,7 @@ sudo sh -c 'grep -qxF "127.0.0.1 kanbilim.com" /etc/hosts || echo "127.0.0.1 kan
 Windows Automation: Fully automating changes to the Windows hosts file requires elevated permissions, often involving PowerShell scripts or manual intervention.
 
 ### Testing Changes: 
+
 After modifying the hosts file, flush the DNS cache to apply changes:
 
 #### Windows: 
@@ -93,7 +94,7 @@ After modifying the hosts file, flush the DNS cache to apply changes:
 ipconfig /flushdns
 ```
 
-#### macOS: 
+#### MacOS: 
 ```bash
 sudo dscacheutil -flushcache; 
 sudo killall -HUP mDNSResponder
